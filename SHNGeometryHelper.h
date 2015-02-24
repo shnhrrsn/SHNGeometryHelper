@@ -76,8 +76,8 @@ static inline CGRect SHNRectGetCenteredInRect(CGRect rect, CGRect centeredIn) {
 /**
  * Get delta between two points
  *
- * @param b Point a
- * @param a Point b
+ * @param a Point a
+ * @param b Point b
  */
 static inline CGPoint SHNPointGetDeltaBetweenPoints(CGPoint a, CGPoint b) {
 	return (CGPoint){ b.x - a.x, b.y - a.y };
