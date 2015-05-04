@@ -33,6 +33,21 @@
 #pragma mark - CGRect
 
 /**
+ * Make a rect with a size, setting origin to 0,0
+ *
+ * @param rect Rect
+ */
+static inline CGRect SHNRectMakeWithSize(CGSize size) {
+	return (CGRect) {
+		.origin = {
+			.x = 0,
+			.y = 0
+		},
+		.size = size
+	};
+}
+
+/**
  * Get the mid point of a rect
  *
  * @param rect Rect to get mid point of
