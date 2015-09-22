@@ -7,6 +7,14 @@
 
 #import "SHNGeometryHelper.h"
 
+#if TARGET_OS_IPHONE
+	@import UIKit;
+
+	CGFloat _SHNGeometryHelperGetMainScreenScale() {
+		return [UIScreen mainScreen].scale;
+	}
+#endif
+
 #pragma mark - CGRect
 
 CGRect SHNRectGetCenteredInRectWithScale(CGRect rect, CGRect centeredIn, CGFloat scale) {

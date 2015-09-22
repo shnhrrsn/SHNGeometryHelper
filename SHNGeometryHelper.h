@@ -8,7 +8,7 @@
 @import CoreGraphics;
 
 #if TARGET_OS_IPHONE
-@import UIKit;
+	CGFloat _SHNGeometryHelperGetMainScreenScale();
 #endif
 
 #ifndef __SHNGeometryHelper
@@ -82,7 +82,7 @@ CGRect SHNRectGetCenteredInRectWithScale(CGRect rect, CGRect centeredIn, CGFloat
  * @param centeredIn Rect to center in
  */
 static inline CGRect SHNRectGetCenteredInRect(CGRect rect, CGRect centeredIn) {
-	return SHNRectGetCenteredInRectWithScale(rect, centeredIn, [UIScreen mainScreen].scale);
+	return SHNRectGetCenteredInRectWithScale(rect, centeredIn, _SHNGeometryHelperGetMainScreenScale());
 }
 #endif
 
@@ -162,7 +162,7 @@ static inline CGFloat SHNCeilWithScale(CGFloat value, CGFloat scale) {
  * @see SHNRoundWithScale
  */
 static inline CGFloat SHNScreenRound(CGFloat value) {
-	return SHNRoundWithScale(value, [UIScreen mainScreen].scale);
+	return SHNRoundWithScale(value, _SHNGeometryHelperGetMainScreenScale());
 }
 
 /**
@@ -172,7 +172,7 @@ static inline CGFloat SHNScreenRound(CGFloat value) {
  * @see SHNFloorWithScale
  */
 static inline CGFloat SHNScreenFloor(CGFloat value) {
-	return SHNFloorWithScale(value, [UIScreen mainScreen].scale);
+	return SHNFloorWithScale(value, _SHNGeometryHelperGetMainScreenScale());
 }
 
 /**
@@ -182,7 +182,7 @@ static inline CGFloat SHNScreenFloor(CGFloat value) {
  * @see SHNCeilWithScale
  */
 static inline CGFloat SHNScreenCeil(CGFloat value) {
-	return SHNCeilWithScale(value, [UIScreen mainScreen].scale);
+	return SHNCeilWithScale(value, _SHNGeometryHelperGetMainScreenScale());
 }
 #endif
 
@@ -240,7 +240,7 @@ static inline CGSize SHNSizeRound(CGSize size, CGFloat scale) {
  * @see SHNFloorCeil
  */
 static inline CGSize SHNSizeScreenFloor(CGSize size) {
-	return SHNSizeFloor(size, [UIScreen mainScreen].scale);
+	return SHNSizeFloor(size, _SHNGeometryHelperGetMainScreenScale());
 }
 
 /**
@@ -251,7 +251,7 @@ static inline CGSize SHNSizeScreenFloor(CGSize size) {
  * @see SHNSizeCeil
  */
 static inline CGSize SHNSizeScreenCeil(CGSize size) {
-	return SHNSizeCeil(size, [UIScreen mainScreen].scale);
+	return SHNSizeCeil(size, _SHNGeometryHelperGetMainScreenScale());
 }
 
 /**
@@ -262,7 +262,7 @@ static inline CGSize SHNSizeScreenCeil(CGSize size) {
  * @see SHNSizeRound
  */
 static inline CGSize SHNSizeScreenRound(CGSize size) {
-	return SHNSizeRound(size, [UIScreen mainScreen].scale);
+	return SHNSizeRound(size, _SHNGeometryHelperGetMainScreenScale());
 }
 #endif
 
