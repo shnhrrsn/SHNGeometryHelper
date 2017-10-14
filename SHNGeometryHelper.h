@@ -5,10 +5,19 @@
 //  Copyright (c) 2014 Shaun Harrison.
 //
 
+@import Foundation;
 @import CoreGraphics;
 
+#import <math.h>
+
+//! Project version number for SHNGeometryHelper.
+FOUNDATION_EXPORT double SHNGeometryHelperVersionNumber;
+
+//! Project version string for SHNGeometryHelper.
+FOUNDATION_EXPORT const unsigned char SHNGeometryHelperVersionString[];
+
 #if TARGET_OS_IPHONE
-	CGFloat _SHNGeometryHelperGetMainScreenScale();
+	CGFloat _SHNGeometryHelperGetMainScreenScale(void);
 #endif
 
 #ifndef __SHNGeometryHelper
@@ -35,7 +44,7 @@
 /**
  * Make a rect with a size, setting origin to 0,0
  *
- * @param rect Rect
+ * @param size CGSize
  */
 static inline CGRect SHNRectMakeWithSize(CGSize size) {
 	return (CGRect) {
@@ -236,7 +245,6 @@ static inline CGSize SHNSizeRound(CGSize size, CGFloat scale) {
  * Floor size width/height using screen scale
  *
  * @param size Size to floor
- * @param scale Scale to floor to
  * @see SHNFloorCeil
  */
 static inline CGSize SHNSizeScreenFloor(CGSize size) {
@@ -247,7 +255,6 @@ static inline CGSize SHNSizeScreenFloor(CGSize size) {
  * Ceil size width/height using screen scale
  *
  * @param size Size to ceil
- * @param scale Scale to ceil to
  * @see SHNSizeCeil
  */
 static inline CGSize SHNSizeScreenCeil(CGSize size) {
@@ -258,7 +265,6 @@ static inline CGSize SHNSizeScreenCeil(CGSize size) {
  * Round size width/height using screen scale
  *
  * @param size Size to round
- * @param scale Scale to round to
  * @see SHNSizeRound
  */
 static inline CGSize SHNSizeScreenRound(CGSize size) {
